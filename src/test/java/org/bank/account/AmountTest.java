@@ -6,11 +6,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class AmountTest {
 
+    private Amount firstAmount ;
+    private Amount secondAmount;
+    private Amount total;
+
+
     @Test
     public void should_total_up_amounts() {
-        final var firstAmount = Amount.of(40);
-        final var secondAmount = Amount.of(60);
-        final var total = firstAmount.plus(secondAmount);
+        firstAmount = Amount.of(40);
+        secondAmount = Amount.of(60);
+        total = firstAmount.plus(secondAmount);
         assertThat(total).isEqualTo(Amount.of(100));
     }
 
@@ -25,4 +30,13 @@ public class AmountTest {
         final var amount = Amount.of(50);
         assertThat(amount.isNegative()).isFalse();
     }
+    @Test
+    public void should_minus_amounts() {
+        firstAmount = Amount.of(30);
+        secondAmount = Amount.of(10);
+        total = firstAmount.minus(secondAmount);
+        assertThat(total).isEqualTo(Amount.of(20));
+
+    }
+
 }

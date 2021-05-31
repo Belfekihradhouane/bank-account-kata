@@ -15,6 +15,10 @@ public class Amount {
         final var value = this.value.add(otherAmount.value);
         return new Amount(value);
     }
+    public Amount minus(Amount amount) {
+        final var value = this.value.subtract(amount.value);
+        return new Amount(value);
+    }
 
     public boolean isNegative() {
         return this.value.compareTo(ZERO) < 0;
