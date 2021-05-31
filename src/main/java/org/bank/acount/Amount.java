@@ -15,8 +15,8 @@ public class Amount {
         final var value = this.value.add(otherAmount.value);
         return new Amount(value);
     }
-    public Amount minus(Amount amount) {
-        final var value = this.value.subtract(amount.value);
+    public Amount negate() {
+        final var value = this.value.negate();
         return new Amount(value);
     }
 
